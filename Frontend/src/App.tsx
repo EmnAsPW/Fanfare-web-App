@@ -1,7 +1,12 @@
 import { useState } from "react";
+import Authmodal from "./components/Authmodal";
 
 function App() {
-  return <div className="bg-red-500">lets gooo</div>;
+  return (
+    <div>
+      <Authmodal />
+    </div>
+  );
 }
 
 export default App;
