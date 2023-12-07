@@ -1,10 +1,19 @@
-import { useState } from "react";
-import Authmodal from "./components/Authmodal";
-
+import AuthOverlay from "./components/AuthOverlay";
+import "./index.css";
+import useGeneralStore from "./stores/generalStore";
+import { useUserStore } from "./stores/userStore";
+import EditProfileOverlay from "./components/EditProfileOverlay";
 function App() {
+  const isLoginOpen = useGeneralStore((state) => state.isLoginOpen);
+  const isEditProfileOpen = useGeneralStore((state) => state.isEditProfileOpen);
   return (
-    <div>
-      <Authmodal />
+    <div className=" ">
+      {isLoginOpen && (
+        <>
+          <AuthOverlay />
+        </>
+      )}{" "}
+      {isEditProfileOpen && <EditProfileOverlay />}
     </div>
   );
 }

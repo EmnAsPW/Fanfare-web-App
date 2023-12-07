@@ -10,7 +10,7 @@ const ProtectedRoutes = ({ children }: { children: ReactNode }) => {
   const setLoginIsOpen = useGeneralStore((state) => state.setLoginIsOpen);
   useEffect(() => {
     if (!user.id) {
-      navigate("/"); // login page or my
+      navigate("/"); // or your login page
       setLoginIsOpen(true);
     }
   }, [user.id, navigate, setLoginIsOpen]);

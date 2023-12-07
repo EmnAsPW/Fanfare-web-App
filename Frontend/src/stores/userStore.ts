@@ -19,7 +19,7 @@ export const useUserStore = create<User & UserActions>()(
   devtools(
     persist(
       (set) => ({
-        id: undefined,
+        id: "",
         fullname: "",
         email: "",
         bio: "",
@@ -27,7 +27,7 @@ export const useUserStore = create<User & UserActions>()(
 
         setUser: (user) => set(user),
         logout: () => {
-          set({ id: undefined, fullname: "", email: "", bio: "", image: "" });
+          set({ id: "", fullname: "", email: "", bio: "", image: "" });
         },
       }),
       {
